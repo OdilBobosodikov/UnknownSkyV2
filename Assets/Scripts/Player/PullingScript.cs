@@ -14,7 +14,7 @@ public class PullingScript : MonoBehaviour
 
     private Rigidbody heldObject;
     private bool isHolding = false;
-
+    public float rotationSpeed = 100f;
     [Header("Keybinds")]
     public KeyCode pullKey = KeyCode.E;
 
@@ -50,7 +50,7 @@ public class PullingScript : MonoBehaviour
                 Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
                 SizeManipulatedObject size = hit.collider.GetComponent<SizeManipulatedObject>();
 
-                if (rb != null && size.sizeStatus == -1)
+                if (rb != null && size.sizeStatus == -1 && !size.isfreezed)
                 {
                     heldObject = rb;
                     heldObject.isKinematic = true;
@@ -64,6 +64,23 @@ public class PullingScript : MonoBehaviour
     {
         Vector3 holdPosition = playerCamera.transform.position + playerCamera.transform.forward * holdDistance;
         heldObject.transform.position = Vector3.MoveTowards(heldObject.transform.position, holdPosition, moveSpeed * Time.deltaTime);
+
+        RotateObject();
+    }
+
+     void RotateObject()
+    {
+        if (Input.GetMouseButton(0)) // Left mouse button
+        {
+            float rotationX = rotationSpeed * Time.deltaTime;
+            heldObject.transform.Rotate(Vector3.right, rotationX, Space.World);
+        }
+
+        if (Input.GetMouseButton(1)) // Right mouse button
+        {
+            float rotationZ = rotationSpeed * Time.deltaTime;
+            heldObject.transform.Rotate(Vector3.forward, rotationZ, Space.World);
+        }
     }
 
     void PushObject()

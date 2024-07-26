@@ -6,6 +6,7 @@ public class SizeManipulatedObject : MonoBehaviour
 {
     public int sizeStatus = 0;
     public bool animationFinished = true;
+    public bool isfreezed = false;
     public void UpdateSizeStatus(int inp)
     {
         int newSizeStatus = sizeStatus + inp;

@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeStatus: 0
   animationFinished: 1
+  isfreezed: 0
 --- !u!54 &639643158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -891,7 +892,7 @@ MonoBehaviour:
   incrementValue: 2.5
   scaleDuration: 0.2
   playerCamera: {fileID: 1147500753}
-  maxDistance: 400
+  maxDistance: 1000
   interactableLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -908,9 +909,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1147500753}
-  timeSlowDuration: 2
-  timeSlowFactor: 0.5
-  maxDistance: 400
+  timeSlowDuration: 10
+  timeSlowFactor: 0.05
+  maxDistance: 1000
   timeSlowKey: 114
   interactableObject:
     serializedVersion: 2
@@ -931,7 +932,7 @@ MonoBehaviour:
   pullForce: 10
   pushForce: 15
   holdDistance: 2
-  maxDistance: 100
+  maxDistance: 1000
   moveSpeed: 10
   interactableLayer:
     serializedVersion: 2

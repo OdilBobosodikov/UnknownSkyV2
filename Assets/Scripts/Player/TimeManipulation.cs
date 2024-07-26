@@ -28,20 +28,22 @@ public class TimeManipulation : MonoBehaviour
         {
             if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & interactableObject) != 0)
             {
-                StartCoroutine(SlowDownTime(hit.collider.GetComponent<Rigidbody>()));
+                StartCoroutine(SlowDownTime(hit.collider.GetComponent<Rigidbody>(), hit.collider.GetComponent<SizeManipulatedObject>()));
             }
         }
     }
 
-    IEnumerator SlowDownTime(Rigidbody targetRigidbody)
+    IEnumerator SlowDownTime(Rigidbody targetRigidbody, SizeManipulatedObject size)
     {
         //targetRigidbody.isKinematic = true;
+        size.isfreezed = true;
         targetRigidbody.useGravity = false;
         targetRigidbody.velocity *= timeSlowFactor;
 
         yield return new WaitForSeconds(timeSlowDuration);
 
         //targetRigidbody.isKinematic = false;
+        size.isfreezed = false;
         targetRigidbody.useGravity = true;
 
     }
