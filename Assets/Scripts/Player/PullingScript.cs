@@ -43,9 +43,9 @@ public class PullingScript : MonoBehaviour
     void PullObject()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, maxDistance))
         {
-            if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsPullableObject"))
+            if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & interactableLayer) != 0)
             {    
                 Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
                 SizeManipulatedObject size = hit.collider.GetComponent<SizeManipulatedObject>();

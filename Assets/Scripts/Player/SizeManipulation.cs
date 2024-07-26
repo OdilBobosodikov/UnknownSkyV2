@@ -15,7 +15,7 @@ public class SizeManipulation : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, maxDistance, interactableLayer))
         {
-            if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsPullableObject"))
+            if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & interactableLayer) != 0)
             {
                 if (Input.GetAxis("Mouse ScrollWheel") > 0f)
                 {

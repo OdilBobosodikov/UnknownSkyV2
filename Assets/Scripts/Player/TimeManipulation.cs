@@ -10,7 +10,7 @@ public class TimeManipulation : MonoBehaviour
     public float maxDistance = 400f;
 
     public KeyCode timeSlowKey = KeyCode.R;
-    public List<LayerMask> interactableObjects = new List<LayerMask>();
+    public LayerMask interactableObject;
 
     void Update()
     {
@@ -22,11 +22,11 @@ public class TimeManipulation : MonoBehaviour
 
     void SlowDownCenterObject()
     {
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // Center of the screen
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, maxDistance, interactableObjects[0]))
+        if (Physics.Raycast(ray, out hit, maxDistance, interactableObject))
         {
-            if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsPullableObject"))
+            if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & interactableObject) != 0)
             {
                 StartCoroutine(SlowDownTime(hit.collider.GetComponent<Rigidbody>()));
             }
