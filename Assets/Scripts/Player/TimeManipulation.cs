@@ -35,14 +35,14 @@ public class TimeManipulation : MonoBehaviour
 
     IEnumerator SlowDownTime(Rigidbody targetRigidbody, SizeManipulatedObject size)
     {
-        //targetRigidbody.isKinematic = true;
+        targetRigidbody.isKinematic = true;
         size.isfreezed = true;
         targetRigidbody.useGravity = false;
         targetRigidbody.velocity *= timeSlowFactor;
 
         yield return new WaitForSeconds(timeSlowDuration);
 
-        //targetRigidbody.isKinematic = false;
+        targetRigidbody.isKinematic = false;
         size.isfreezed = false;
         targetRigidbody.useGravity = true;
 
