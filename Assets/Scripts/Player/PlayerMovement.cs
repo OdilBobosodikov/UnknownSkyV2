@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public LayerMask whatIsGround2;
     bool grounded;
 
     [Header("Slope Handling")]
