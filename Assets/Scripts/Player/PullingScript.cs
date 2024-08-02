@@ -17,7 +17,7 @@ public class PullingScript : MonoBehaviour
     public float rotationSpeed = 100f;
     [Header("Keybinds")]
     public KeyCode pullKey = KeyCode.E;
-
+    private SizeManipulatedObject size;
 
     void Update()
     {
@@ -48,10 +48,11 @@ public class PullingScript : MonoBehaviour
             if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & interactableLayer) != 0)
             {    
                 Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
-                SizeManipulatedObject size = hit.collider.GetComponent<SizeManipulatedObject>();
+                size = hit.collider.GetComponent<SizeManipulatedObject>();
 
                 if (rb != null && size.sizeStatus == -1 && !size.isfreezed)
-                {
+                {                
+                    size.canBeChanged = false;
                     heldObject = rb;
                     heldObject.isKinematic = true;
                     isHolding = true;
@@ -89,5 +90,6 @@ public class PullingScript : MonoBehaviour
         heldObject.AddForce(playerCamera.transform.forward * pushForce, ForceMode.Impulse);
         heldObject = null;
         isHolding = false;
+        size.canBeChanged = true;
     }
 }

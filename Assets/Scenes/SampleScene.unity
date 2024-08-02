@@ -208,6 +208,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 798676560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &102082476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3006993709692539744, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 173747820958018496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &105628952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,6 +418,7 @@ GameObject:
   - component: {fileID: 129844517}
   - component: {fileID: 129844516}
   - component: {fileID: 129844514}
+  - component: {fileID: 129844519}
   m_Layer: 0
   m_Name: ScrollUPDownTask (2)
   m_TagString: Untagged
@@ -428,8 +435,8 @@ Transform:
   m_GameObject: {fileID: 129844512}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1034966, y: 2.6014214, z: -100.73593}
-  m_LocalScale: {x: 16.078869, y: 5.7, z: 2.6600003}
+  m_LocalPosition: {x: -2.1034966, y: 2.6014214, z: -98.8}
+  m_LocalScale: {x: 16.078869, y: 5.7, z: 8.436066}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1094993582}
@@ -448,7 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tasksText: {fileID: 817211093}
   player: {fileID: 579874230}
-  newTask: Throw Blue box on next platform and press Tab
+  newTask: You now have a new ability to switch positions with the blue cube. Throw
+    the blue cube onto the next platform, then press Tab to switch places with it.
 --- !u!65 &129844516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -520,6 +528,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129844512}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &129844519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129844512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf5e83d5fccd145a1ac91677a15272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 579874230}
+  player: {fileID: 1273408090}
 --- !u!1 &139115570 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3852341972610935857, guid: 39abb6a7832ed4d4fbe68a7cdd624612,
@@ -1061,6 +1083,7 @@ GameObject:
   - component: {fileID: 256623476}
   - component: {fileID: 256623475}
   - component: {fileID: 256623473}
+  - component: {fileID: 256623478}
   m_Layer: 0
   m_Name: ScrollUPDownTask (3)
   m_TagString: Untagged
@@ -1077,8 +1100,8 @@ Transform:
   m_GameObject: {fileID: 256623471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.096157, y: 1.9536858, z: -57.988617}
-  m_LocalScale: {x: 16.078869, y: 5.7, z: 2.6600003}
+  m_LocalPosition: {x: -2.096157, y: 3.5, z: -65.1}
+  m_LocalScale: {x: 16.078869, y: 5.7, z: 21.991726}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1094993582}
@@ -1097,7 +1120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tasksText: {fileID: 817211093}
   player: {fileID: 579874230}
-  newTask: Reach end of the level
+  newTask: The blue box has fulfilled its purpose and will no longer switch positions
+    with you. Proceed to the end of the level
 --- !u!65 &256623475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1169,6 +1193,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256623471}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &256623478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256623471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c2d85a791a6a149a37b8b140bd16ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 579874230}
+  player: {fileID: 1273408090}
 --- !u!1001 &273170559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2776,8 +2814,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2812,7 +2850,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -103.6875, y: 0, z: 102.60449, w: -92.34375}
+  m_margin: {x: -183.2002, y: 0, z: 101.688965, w: -92.34375}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2929,7 +2967,7 @@ PrefabInstance:
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 20.047974
+      value: 21.188704
       objectReference: {fileID: 0}
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
@@ -2944,7 +2982,7 @@ PrefabInstance:
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 142.24
+      value: 141.75
       objectReference: {fileID: 0}
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
@@ -3736,7 +3774,7 @@ PrefabInstance:
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.554159
+      value: 8.544518
       objectReference: {fileID: 0}
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
@@ -3751,7 +3789,7 @@ PrefabInstance:
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 107.81
+      value: 108.14
       objectReference: {fileID: 0}
     - target: {fileID: 2903819260059347725, guid: f834541ef62c0794abcfdd8a285b407e,
         type: 3}
@@ -3837,7 +3875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: 229}
+  m_AnchoredPosition: {x: -199, y: 229}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &817211093
@@ -3889,8 +3927,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3925,7 +3963,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.65979, y: 463.91406, z: -0.73046875, w: -226.69922}
+  m_margin: {x: -82.04492, y: 463.91406, z: -95.6875, w: -226.69922}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5678,7 +5716,7 @@ MonoBehaviour:
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 200
+    m_Bits: 456
   whatIsGround2:
     serializedVersion: 2
     m_Bits: 0
@@ -5770,11 +5808,11 @@ MonoBehaviour:
   pullForce: 10
   pushForce: 15
   holdDistance: 2
-  maxDistance: 1000
-  moveSpeed: 10
+  maxDistance: 10
+  moveSpeed: 25
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   rotationSpeed: 100
   pullKey: 101
 --- !u!114 &1273408097
@@ -5784,7 +5822,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273408090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 280f1c80524379b4c90852a660b42fb4, type: 3}
   m_Name: 
@@ -6137,8 +6175,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6173,7 +6211,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -142.97437, w: -66.58594}
+  m_margin: {x: 0, y: 0, z: -468.125, w: -402.84375}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9289,7 +9327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tasksText: {fileID: 817211093}
   player: {fileID: 579874230}
-  newTask: Reach top platform
+  newTask: Make your way to the top platform
 --- !u!65 &2111849934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9526,18 +9564,40 @@ PrefabInstance:
       objectReference: {fileID: 579874230}
     - target: {fileID: 641365970451714745, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
+      propertyPath: newTask
+      value: To pull an object, use the "E" key. Once you have pulled it, release
+        the button and press "R" again while aiming at the object. Keep in mind,
+        you can only pull small-sized objects.
+      objectReference: {fileID: 0}
+    - target: {fileID: 641365970451714745, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+        type: 3}
       propertyPath: tasksText
       value: 
       objectReference: {fileID: 817211093}
     - target: {fileID: 2554821301138639650, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1273408090}
+    - target: {fileID: 2554821301138639650, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+        type: 3}
       propertyPath: blueBox
       value: 
       objectReference: {fileID: 1235365645}
+    - target: {fileID: 2554821301138639650, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+        type: 3}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 579874230}
     - target: {fileID: 3006993709692539744, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
       propertyPath: m_Name
       value: NewCheckPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177876538000443127, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.287952
       objectReference: {fileID: 0}
     - target: {fileID: 3177876538000443127, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
@@ -9552,7 +9612,7 @@ PrefabInstance:
     - target: {fileID: 3177876538000443127, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -141.04218
+      value: -137.9
       objectReference: {fileID: 0}
     - target: {fileID: 3177876538000443127, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
         type: 3}
@@ -9594,10 +9654,15 @@ PrefabInstance:
       propertyPath: oldRespawn
       value: 
       objectReference: {fileID: 1607510966}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2554821301138639650, guid: e42f2f24dfc46584b8d6ccea04e6ccbd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3006993709692539744, guid: e42f2f24dfc46584b8d6ccea04e6ccbd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2903819258509673636}
   m_SourcePrefab: {fileID: 100100000, guid: e42f2f24dfc46584b8d6ccea04e6ccbd, type: 3}
 --- !u!1001 &1177492211786564209
 PrefabInstance:
@@ -9809,6 +9874,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 173747820958018496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2903819258509673636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102082476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c2d85a791a6a149a37b8b140bd16ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 579874230}
+  player: {fileID: 1273408090}
 --- !u!1001 &3551222488229580964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9822,6 +9901,13 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 579874230}
+    - target: {fileID: 2701601612419539788, guid: 807b36a7dc87bab4d855e19fe864180c,
+        type: 3}
+      propertyPath: newTask
+      value: 'Use the mouse scroll wheel to adjust the size of the red box. Aim at
+        the red box and scroll to switch between three size states: small, medium,
+        and large.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2701601612419539788, guid: 807b36a7dc87bab4d855e19fe864180c,
         type: 3}
       propertyPath: tasksText
@@ -9986,8 +10072,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105633065739002497, guid: 4acf191bcab9886499ddbbe0091e9d85,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105633065739002497, guid: 4acf191bcab9886499ddbbe0091e9d85,
+        type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724599986466217012, guid: 4acf191bcab9886499ddbbe0091e9d85,
         type: 3}
@@ -10002,7 +10093,7 @@ PrefabInstance:
     - target: {fileID: 8248500399044263669, guid: 4acf191bcab9886499ddbbe0091e9d85,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.27
+      value: 13.59
       objectReference: {fileID: 0}
     - target: {fileID: 8248500399044263669, guid: 4acf191bcab9886499ddbbe0091e9d85,
         type: 3}

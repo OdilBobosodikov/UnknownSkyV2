@@ -20,7 +20,7 @@ using UnityEngine;
         if (companion != null)
         {
             Vector3 tempPosition = transform.position;
-            transform.position = companion.transform.position;
+            transform.position = new Vector3(companion.transform.position.x, 1.5f + companion.transform.position.y, companion.transform.position.z);
             companion.transform.position = tempPosition;
 
 

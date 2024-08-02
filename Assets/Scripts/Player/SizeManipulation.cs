@@ -32,7 +32,7 @@ public class SizeManipulation : MonoBehaviour
 
    IEnumerator IncreaseScale(Transform transformObj, SizeManipulatedObject size)
     {
-        if (size.sizeStatus < 1 && size.animationFinished)
+        if (size.sizeStatus < 1 && size.animationFinished && size.canBeChanged)
         {
             Vector3 initialScale = transformObj.localScale;
             Vector3 targetScale = initialScale * incrementValue;
@@ -56,7 +56,7 @@ public class SizeManipulation : MonoBehaviour
 
     IEnumerator DecreaseScale(Transform transformObj, SizeManipulatedObject size)
     {
-        if (size.sizeStatus > -1 && size.animationFinished)
+        if (size.sizeStatus > -1 && size.animationFinished && size.canBeChanged)
         {
             Vector3 initialScale = transformObj.localScale;
             Vector3 targetScale = initialScale / incrementValue;
